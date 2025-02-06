@@ -1,84 +1,81 @@
-import ArrowDown from "../assets/arrow-down.svg";
-import AppLogo from "../assets/logo-nba.svg";
-import "./AppHeader.css";
+import ArrowDown from '../assets/arrow-down-black.svg';
+import AppLogo from '../assets/logo-nba.svg';
+import NavIcon from '../assets/nav-icon.svg';
+import './AppHeader.css';
 
 const array1 = [
-  "Game",
-  "Schedule",
-  "Watch",
-  "News",
-  "All-Star",
-  "Stats",
-  "Standings",
-  "Teams",
-  "Players",
+  'Game',
+  'Schedule',
+  'Watch',
+  'News',
+  'All-Star',
+  'Stats',
+  'Standings',
+  'Teams',
+  'Players',
 ];
 
 const array2 = [
   {
-    title: "Home",
+    title: 'Home',
     expanable: false,
   },
   {
-    title: "Top Stories",
+    title: 'Top Stories',
     expanable: false,
   },
   {
-    title: "Trade Deadline",
+    title: 'Trade Deadline',
     expanable: false,
   },
   {
-    title: "Power Rankings",
+    title: 'Power Rankings',
     expanable: false,
   },
   {
-    title: "MVP Ladder",
+    title: 'MVP Ladder',
     expanable: false,
   },
   {
-    title: "Transactions",
+    title: 'Transactions',
     expanable: false,
   },
   {
-    title: "Features",
+    title: 'Features',
     expanable: true,
   },
   {
-    title: "Events",
+    title: 'Events',
     expanable: true,
   },
   {
-    title: "Key Dates",
+    title: 'Key Dates',
     expanable: false,
   },
   {
-    title: "Future Starts Now",
+    title: 'Future Starts Now',
     expanable: false,
   },
   {
-    title: "More",
+    title: 'More',
     expanable: true,
   },
 ];
 
 const AppHeader = () => {
   return (
-    <div className="fixed w-full">
-      <div className="bg-black px-4 md:py-4">
+    <div className="fixed z-20 w-full">
+      <div className="bg-black px-4 py-4 lg:py-2">
         <div className="flex flex-row">
-          {/* <button className="NavHamburger_hamburger__kqDDP NavHamburger_squeeze__F9qaj">
-            <span className="NavHamburger_box__r0p_S">
-              <span className="NavHamburger_inner__whZdg">
-                <span className="NavHamburger_navToggle__nOZPv">
-                  Navigation Toggle
-                </span>
-              </span>
-            </span>
-          </button> */}
+          <button className="flex flex-col justify-center items-center mx-2">
+            <span className="bg-slate-100 block lg:hidden h-[3px] w-6 -translate-y-0.5 opacity-[85]"></span>
+            <span className="bg-slate-100 block lg:hidden h-[2.8px] w-6 my-0.5 opacity-[85]"></span>
+            <span className="bg-slate-100 block lg:hidden h-[2.6px] w-6 translate-y-0.5 opacity-[85]"></span>
+          </button>
           <a className="flex w-[3rem] shrink-0">
             <img src={AppLogo} alt="App Logo" />
           </a>
-          <ul className="flex flex-row list-none overflow-x-hidden px-2">
+          <ul className="flex flex-row grow list-none overflow-x-hidden px-2">
             {array1.map((x, index) => (
               <li key={index} className="flex items-center px-2">
                 <a href="#">
@@ -88,11 +85,49 @@ const AppHeader = () => {
                 </a>
               </li>
             ))}
+            <li className="w-auto grow"></li>
+            <li className="block">
+              <a
+                href="#"
+                className="text-xs text-black bg-amber-400 hover:underline rounded-[4px] leading-[2rem] whitespace-nowrap mt-4 p-1"
+              >
+                League Pass
+              </a>
+            </li>
+            <li className="flex items-center">
+              <a
+                href="#"
+                className="relative flex items-center px-2 cursor-pointer"
+              >
+                <span className="text-sm text-white font-semibold whitespace-nowrap">
+                  Store
+                </span>
+              </a>
+            </li>
+            <li className="flex items-center">
+              <a
+                href="#"
+                className="relative flex items-center px-2 cursor-pointer"
+              >
+                <span className="text-sm text-white font-semibold whitespace-nowrap">
+                  Tickets
+                </span>
+              </a>
+            </li>
+            <li className="flex items-center">
+              <button className="relative flex cursor-pointer">
+                <img src={NavIcon} />
+              </button>
+            </li>
           </ul>
-          <div>
+          <div className="flex items-center">
             <ul>
               <li>
-                <button>Sign In</button>
+                <button className="relative flex items-center px-2 cursor-pointer">
+                  <span className="text-sm text-white font-semibold whitespace-nowrap">
+                    Sign In
+                  </span>
+                </button>
               </li>
             </ul>
           </div>
@@ -105,7 +140,10 @@ const AppHeader = () => {
               News
             </li>
             {array2.map((x, index) => (
-              <li key={index} className="relative flex items-center px-2 group">
+              <li
+                key={index}
+                className="relative flex items-center px-2 group"
+              >
                 {x.expanable ? (
                   <button className="flex items-center text-black text-sm font-light whitespace-nowrap overflow-visible normal-case cursor-pointer">
                     <span className="mr-2">{x.title}</span>

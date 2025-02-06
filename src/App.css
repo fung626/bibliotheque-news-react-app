@@ -11,48 +11,16 @@
   flex-direction: column;
 }
 
-@media (min-width: 640px) {
-  /* sm */
-  .body {
-    padding: 24px;
-    padding-top: 120px;
-  }
-}
-
-@media (min-width: 768px) {
-  /* md */
-  .body {
-    padding: 32px;
-    padding-top: 120px;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* lg */
-  .body {
-    padding: 40px;
-    padding-top: 120px;
-  }
-}
-
-@media (min-width: 1280px) {
-  /* xl */
-  .body {
-    padding: 48px;
-    padding-top: 120px;
-  }
-}
-
 @font-face {
-  font-family: "KnockoutRegular";
-  src: url("./assets/fonts/knockout-regular.otf") format("opentype");
+  font-family: 'KnockoutRegular';
+  src: url('./assets/fonts/knockout-regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "KnockoutBold";
-  src: url("./assets/fonts/knockout-bold.otf") format("opentype");
+  font-family: 'KnockoutBold';
+  src: url('./assets/fonts/knockout-bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }

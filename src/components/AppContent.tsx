@@ -1,4 +1,8 @@
-import DemoData from "../demo-data.json";
+import Markdown from 'react-markdown';
+import ReactPlayer from 'react-player';
+import rehypeRaw from 'rehype-raw';
+import DemoData from '../demo-data.json';
+import './AppContent.css';
 
 const AppContent = () => {
   return (
@@ -13,27 +17,42 @@ const AppContent = () => {
           </h1>
           <p className="mt-4">{DemoData.article.sub_title}</p>
         </div>
-        <div className="pb-2">
-          <div className="flex justify-between">
-            <p className="text-sm text-black font-normal">
+        <div className="mb-4">
+          <div className="flex justify-between flex-wrap">
+            <p className="text-sm text-black font-normal whitespace-nowrap">
               From {DemoData.article.from}
             </p>
-            <p className="text-sm text-gray-400 font-normal">
+            <p className="text-sm text-gray-400 font-normal whitespace-nowrap">
               Updated on {DemoData.article.updated_on}
             </p>
           </div>
         </div>
         <div className="flex">
-          <div className="w-3/4"></div>
-          <div className="w-1/4 pb-2 hidden lg:block">
+          <div className="content lg:w-3/4 lg:pr-4">
+            <div className="player-wrapper">
+              <ReactPlayer
+                className="player"
+                url="https://www.youtube.com/watch?v=gWpvDJfXXKg"
+                width="100%"
+                height="100%"
+              />
+            </div>
+            <Markdown rehypePlugins={[rehypeRaw]}>
+              {DemoData.article.content.join('')}
+            </Markdown>
+          </div>
+          <div className="w-1/4 pl-4 pb-2 hidden lg:block">
             <aside>
               <h4 className="text-xs text-black font-bold font-knockout uppercase border-b-1 border-gray-200 pb-2">
                 Related
               </h4>
               <ul className="flex flex-col list-none">
-                {DemoData.article.related.map((x) => {
+                {DemoData.article.related.map((x, index) => {
                   return (
-                    <li className="border-b-1 border-gray-200 pt-4 pb-2 mb-2">
+                    <li
+                      key={index}
+                      className="border-b-1 border-gray-200 pt-4 pb-2 mb-2"
+                    >
                       <a href="#">
                         <article>
                           <div>
