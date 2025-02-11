@@ -1,63 +1,63 @@
-import ArrowDown from '../assets/arrow-down-black.svg';
-import AppLogo from '../assets/logo-nba.svg';
-import NavIcon from '../assets/nav-icon.svg';
-import './AppHeader.css';
+import ArrowDown from "../assets/arrow-down-black.svg";
+import AppLogo from "../assets/logo-nba.svg";
+import NavIcon from "../assets/nav-icon.svg";
+import "./AppHeader.css";
 
 const array1 = [
-  'Game',
-  'Schedule',
-  'Watch',
-  'News',
-  'All-Star',
-  'Stats',
-  'Standings',
-  'Teams',
-  'Players',
+  "Game",
+  "Schedule",
+  "Watch",
+  "News",
+  "All-Star",
+  "Stats",
+  "Standings",
+  "Teams",
+  "Players",
 ];
 
 const array2 = [
   {
-    title: 'Home',
+    title: "Home",
     expanable: false,
   },
   {
-    title: 'Top Stories',
+    title: "Top Stories",
     expanable: false,
   },
   {
-    title: 'Trade Deadline',
+    title: "Trade Deadline",
     expanable: false,
   },
   {
-    title: 'Power Rankings',
+    title: "Power Rankings",
     expanable: false,
   },
   {
-    title: 'MVP Ladder',
+    title: "MVP Ladder",
     expanable: false,
   },
   {
-    title: 'Transactions',
+    title: "Transactions",
     expanable: false,
   },
   {
-    title: 'Features',
+    title: "Features",
     expanable: true,
   },
   {
-    title: 'Events',
+    title: "Events",
     expanable: true,
   },
   {
-    title: 'Key Dates',
+    title: "Key Dates",
     expanable: false,
   },
   {
-    title: 'Future Starts Now',
+    title: "Future Starts Now",
     expanable: false,
   },
   {
-    title: 'More',
+    title: "More",
     expanable: true,
   },
 ];
@@ -135,17 +135,16 @@ const AppHeader = () => {
       </div>
       <div className="flex justify-center h-[3rem] bg-white shadow-lg relative">
         <nav className="relative inline-flex items-center justify-between w-full h-full px-4">
-          <ul className="flex flex-row list-none overflow-x-hidden px-2">
-            <li className="flex items-center font-bold uppercase pr-4 mr-2 border-r-1">
-              News
-            </li>
+          <ul className="flex flex-row items-center list-none overflow-x-hidden px-2">
+            <li className="flex items-center font-bold uppercase mr-2">News</li>
+            <div className="w-[1.5px] h-[30px] bg-black mr-2"></div>
             {array2.map((x, index) => (
               <li
                 key={index}
-                className="relative flex items-center px-2 group"
+                className="relative flex items-center px-2 py-4 group"
               >
                 {x.expanable ? (
-                  <button className="flex items-center text-black text-sm font-light whitespace-nowrap overflow-visible normal-case cursor-pointer">
+                  <button className="flex items-center text-black text-sm font-light whitespace-nowrap normal-case cursor-pointer">
                     <span className="mr-2">{x.title}</span>
                     <img
                       src={ArrowDown}
@@ -161,7 +160,7 @@ const AppHeader = () => {
                     {x.title}
                   </a>
                 )}
-                {/* <div className="absolute bottom-[0px] left-0 w-full h-[2px] bg-transparent group-hover:bg-black overflow-visible"></div> */}
+                <div className="absolute bottom-[2px] left-0 w-full h-[2.5px] bg-transparent group-hover:bg-black"></div>
               </li>
             ))}
           </ul>

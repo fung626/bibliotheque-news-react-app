@@ -1,94 +1,87 @@
-import { useState } from 'react';
-import ArrowDown from '../assets/arrow-down-white.svg';
-import Facebook from '../assets/facebook.svg';
-import Instagram from '../assets/instagram.svg';
-import WarnerMediaLogo from '../assets/logo-warnermedia.svg';
-import Snapchat from '../assets/snapchat.svg';
-import TickTok from '../assets/ticktok.svg';
-import Twitch from '../assets/twitch.svg';
-import Twitter from '../assets/twitter.svg';
-import Youtube from '../assets/youtube.svg';
-import './AppFooter.css';
+import { useState } from "react";
+import ArrowDown from "../assets/arrow-down-white.svg";
+import Facebook from "../assets/facebook.svg";
+import Instagram from "../assets/instagram.svg";
+import WarnerMediaLogo from "../assets/logo-warnermedia.svg";
+import Snapchat from "../assets/snapchat.svg";
+import TickTok from "../assets/ticktok.svg";
+import Twitch from "../assets/twitch.svg";
+import Twitter from "../assets/twitter.svg";
+import Youtube from "../assets/youtube.svg";
+import "./AppFooter.css";
 
 interface FooterLinks {
   [key: string]: string[];
 }
 
 const array: FooterLinks = {
-  'NBA Organization': [
-    'NBA ID',
-    'NBA Official',
-    'NBA Careers',
-    'NBA Fan Code of Conduct',
+  "NBA Organization": [
+    "NBA ID",
+    "NBA Official",
+    "NBA Careers",
+    "NBA Fan Code of Conduct",
   ],
-  'NBA Initiatives': [
-    'NBA Cares',
-    'Jr. NBA / Jr. WNBA',
-    'NBA Foundation',
-    'Social Justice Coalition',
+  "NBA Initiatives": [
+    "NBA Cares",
+    "Jr. NBA / Jr. WNBA",
+    "NBA Foundation",
+    "Social Justice Coalition",
   ],
-  'Across The League': [
-    'NBA Communications',
-    'Lockervision',
-    'NBA Transactions',
+  "Across The League": [
+    "NBA Communications",
+    "Lockervision",
+    "NBA Transactions",
   ],
-  SHOP: [
-    'Global Stores',
-    'NYC Store',
-    'NBA Auctions',
-    'NBA Photostore',
-  ],
+  SHOP: ["Global Stores", "NYC Store", "NBA Auctions", "NBA Photostore"],
 };
 
 const array2 = [
-  'Privacy Policy',
-  'EEA/UK Privacy Statement',
-  'Brazil Privacy Statement',
-  'Colorado Consumer Privacy Statement',
-  'California Consumer Privacy Statement',
-  'Terms of Use',
-  'Cookie Policy',
-  'Accessibility and Closed Captions',
-  'Customer Support',
-  'Your Privacy Choices',
+  "Privacy Policy",
+  "EEA/UK Privacy Statement",
+  "Brazil Privacy Statement",
+  "Colorado Consumer Privacy Statement",
+  "California Consumer Privacy Statement",
+  "Terms of Use",
+  "Cookie Policy",
+  "Accessibility and Closed Captions",
+  "Customer Support",
+  "Your Privacy Choices",
 ];
 
 const socials = [
   {
-    name: 'Facebook',
+    name: "Facebook",
     image: Facebook,
   },
   {
-    name: 'Instagram',
+    name: "Instagram",
     image: Instagram,
   },
   {
-    name: 'Snapchat',
+    name: "Snapchat",
     image: Snapchat,
   },
   {
-    name: 'TickTok',
+    name: "TickTok",
     image: TickTok,
   },
   {
-    name: 'Twitter',
+    name: "Twitter",
     image: Twitter,
   },
   {
-    name: 'Youtube',
+    name: "Youtube",
     image: Youtube,
   },
   {
-    name: 'Twitch',
+    name: "Twitch",
     image: Twitch,
   },
 ];
 
 const AppFooter = () => {
   //
-  const [expandedSections, setExpandedSections] = useState<string[]>(
-    []
-  );
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
 
   const handleToggle = (section: string) => {
     setExpandedSections((prev) =>
@@ -116,14 +109,14 @@ const AppFooter = () => {
                   <img
                     src={ArrowDown}
                     className={`block lg:hidden ease-out duration-300 transition-all ${
-                      isExpanded ? 'rotate-180' : ''
+                      isExpanded ? "rotate-180" : ""
                     }`}
                     alt="arrow-down"
                   />
                 </button>
                 <ul
                   className={`px-8 pb-6 lg:px-2 lg:pb-0 ${
-                    isExpanded ? 'block' : 'hidden'
+                    isExpanded ? "block" : "hidden"
                   } lg:block`}
                 >
                   {y.map((z, subIdx) => {
@@ -167,7 +160,19 @@ const AppFooter = () => {
           </div>
         </section>
         <hr className="hidden lg:block border-t-1 border-gray-200 my-8"></hr>
-        <div className="flex flex-row">
+        <div className="flex flex-col lg:flex-row-reverse mb-4 px-4">
+          <section className="flex py-2 pb-4 lg:p-0">
+            {socials.map((x, index) => (
+              <a key={`sm-${index}`} href="#" className="mr-2" target="_blank">
+                <img
+                  className="w-[1.45rem] mr-[1.25rem] mt-3"
+                  src={x.image}
+                  alt={`${x.name} Icon Button`}
+                  title={`${x.name} Icon Button`}
+                />
+              </a>
+            ))}
+          </section>
           <section className="">
             <div className="text-xs text-white font-bold mb-4">
               © 2025 NBA Media Ventures, LLC. All rights reserved.
@@ -181,24 +186,22 @@ const AppFooter = () => {
                   <a href="#" className="relative">
                     {x}
                   </a>
-                  {index < array2.length - 1 && (
-                    <span className="mx-2">|</span>
-                  )}
+                  {index < array2.length - 1 && <span className="mx-2">|</span>}
                 </li>
               ))}
             </ul>
             <p className="text-xs text-white font-light leading-[1.625]">
-              If you are having difficulty accessing any content on
-              this website, please visit our
+              If you are having difficulty accessing any content on this
+              website, please visit our
               <a href="#" className="relative hover:underline">
-                {' '}
+                {" "}
                 Accessibility page.
               </a>
             </p>
             <div>
               <p className="text-xs text-white font-light leading-[1.625]">
-                NBA.com is part of Warner Media, LLC’s Turner Sports
-                &amp; Entertainment Digital Network
+                NBA.com is part of Warner Media, LLC’s Turner Sports &amp;
+                Entertainment Digital Network
               </p>
               <img
                 className="w-[6rem] mt-3"
@@ -207,23 +210,6 @@ const AppFooter = () => {
                 title="Warner Media Logo"
               />
             </div>
-          </section>
-          <section className="flex">
-            {socials.map((x, index) => (
-              <a
-                key={`sm-${index}`}
-                href="#"
-                className="mr-2"
-                target="_blank"
-              >
-                <img
-                  className="w-[1.45rem] mr-[1.25rem] mt-3"
-                  src={x.image}
-                  alt={`${x.name} Icon Button`}
-                  title={`${x.name} Icon Button`}
-                />
-              </a>
-            ))}
           </section>
         </div>
       </div>
