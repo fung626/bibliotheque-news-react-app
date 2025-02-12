@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-import Markdown from "react-markdown";
-import ReactPlayer from "react-player";
-import rehypeRaw from "rehype-raw";
-import DemoData from "../demo-data.json";
-import "./AppContent.css";
+import Markdown from 'react-markdown';
+import ReactPlayer from 'react-player';
+import rehypeRaw from 'rehype-raw';
+import DemoData from '../demo-data.json';
+import './AppContent.css';
 
 const getImagePath = (image: string) => {
   return `/assets/${image}`;
@@ -43,7 +43,7 @@ const AppContent = () => {
               />
             </div>
             <Markdown rehypePlugins={[rehypeRaw]}>
-              {DemoData.article.content.join("")}
+              {DemoData.article.content.join('')}
             </Markdown>
           </div>
           <div className="w-1/4 pl-4 pb-2 hidden lg:block">
@@ -94,7 +94,7 @@ const AppContent = () => {
               {DemoData.article.related.map((x, index) => {
                 return (
                   <li key={index} className="flex">
-                    <div className="w-[160px] min-w-[160px] min-h-[117px]">
+                    <div className="w-[160px] h-[117px] min-w-[160px]">
                       <figure className="relative overflow-hidden h-full">
                         <img
                           className="object-cover w-full h-full"
@@ -112,7 +112,7 @@ const AppContent = () => {
                               </span>
                             </h3>
                             <p className="py-2">
-                              <span className="text-xs text-ellipsis overflow-hidden">
+                              <span className="text-xs text-ellipsis line-clamp-2 overflow-hidden">
                                 {x.details}
                               </span>
                             </p>
@@ -121,7 +121,9 @@ const AppContent = () => {
                       </div>
                       <div>
                         <a href="#">
-                          <div className="text-xs text-gray-500">{x.time}</div>
+                          <div className="text-xs text-gray-500">
+                            {x.time}
+                          </div>
                         </a>
                       </div>
                     </div>
