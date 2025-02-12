@@ -51,11 +51,15 @@ To get started with this project, follow these steps:
    ```
 
 2. **Open the application:**
-   - Navigate to `http://localhost:{port}` in your browser to view the application..
+   - Navigate to `http://localhost:{port}` in your browser to view the application.
+
+## Deployment
+
+The application is deployed and accessible at:
+
+[Demo](https://fung626.github.io/bibliotheque-news-react-app/)
 
 ## Design Ideas and Challenges
-
-### Design Ideas
 
 - **Responsive Design:** Responsive Design: Utilized Flexbox and Tailwind CSS for layout management to ensure the application is responsive across different screen sizes..
 - **Refined Styling:** Applied consistent color schemes, padding, and font styles using Tailwind CSS to enhance the visual appeal.
